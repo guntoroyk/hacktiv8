@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buat Account Baru</title>
+</head>
+<body>
+    <h1>Buat Account Baru</h1>
+    
+    <form action="welcome.html">
+        <h3>Sign Up Form</h3>
+        <section>
+            <label for="firstname">First name:</label>
+            <br>
+            <input type="text" id="firstname" name="firstname">
+        </section>
+        <br>
+        <section>
+            <label for="lastname">Last name:</label>
+            <br>
+            <input type="text" id="lastname" name="lastname">
+        </section>
+        <br>
+        <section>
+            <span>Gender:</span>
+            <br>
+            <input type="radio" id='male' name="gender" value="male">
+            <label for="male">Male</label>
+            <br>
+            <input type="radio" id='female' name="gender" value="female">
+            <label for="male">Female</label>
+            <br>
+            <input type="radio" id='other' name="gender" value="other">
+            <label for="male">Other</label>
+        </section>
+        <br>
+        <section>
+            <label for="nationality">Nationality:</label>
+            <br>
+            <select name="nationality" id="nationality">
+                <option value="Indonesian">Indonesian</option>
+                <option value="Malaysian">Malaysian</option>
+                <option value="Singapore">Singaporean</option>
+            </select>
+        </section>
+        <br>
+        <section>
+            <span>Language Spoken:</span>
+            <br>
+            <input type="checkbox" name="language" id="bahasa">
+            <label for="bahasa">Bahasa Indonesia</label>
+            <br>
+            <input type="checkbox" name="language" id="english">
+            <label for="bahasa">English</label>
+            <br>
+            <input type="checkbox" name="language" id="other">
+            <label for="bahasa">Other</label>
+        </section>
+        <br>
+        <section>
+            <label for="bio">Bio:</label>
+            <br>
+            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+        </section>
+        <br>
+        <section>
+            <input type="submit" value="Submit">
+        </section>
+        
+    </form>
+</body>
+</html>
