@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url('img/sample-pattern.png');
+    margin: 0 auto;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 100px;
+}
+
+ul {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+ul a {
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+h5 {
+    margin: 0;
+}
+
+article {
+    height: 100px;
+    background: white;
+}
+
+footer {
+    /* background: black; */
+}
+
+.navbar {
+    display: inline-block;
+    width: 100%;
+    background: white;
+}
+
+.content {
+    padding: 0 100px;
+    position: relative;
+    top: 30px;
+}
+
+#menu {
+    float: right;
+    margin-right: 20px;
+}
+
+#logo {
+    margin: 5px;
+}
+
+
+/* 
+
+
+
+
+.navbar {
+    display: inline-block;
+    width: 100%;
+    background: white;
+}
+
+#logo {
+    float: left;
+}
+
+#menu {
+    float: right;
+    margin-right: 20px;
+} */
