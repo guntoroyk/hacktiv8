@@ -21,12 +21,15 @@ function cariModus(arr) {
     
     let first = arr[0];
     let same = true;
+
+    //cek apakah semua elemen bernilai sama?
     for (let i = 1; i < arr.length; i++) {
         if (arr[i] !== first) {
             same = false;
         }
     }
     
+    // jika tidak sama maka cari modusnya
     if (!same) {
         for (let i = 0; i < arr.length; i++) {
             let count = 1;

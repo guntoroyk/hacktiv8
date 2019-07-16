@@ -44,36 +44,30 @@ Mohon maaf juara tidak bisa ditentukkan dalam minggu ini
 //   let winner = "";
 //   let voteCountMax = 0;
 //   let same = false;
-  
+
 //   for (let i = 0; i < votes.length; i++) {
-//     let voteCount = 0;
-//     same = false;
-    
-//     if (votes[i] !== winner) {
-//       for (let j = 0; j < votes.length; j++) {
-//         if (j !== i) {
-//           if (votes[j] === votes[i]) {
-//             voteCount++;
-//           }
+//     let voteCount = ;
+
+//     for (let j = 0; j < votes.length; j++) {
+//       if (j !== i) {
+//         if (votes[j] === votes[i]) {
+//           voteCount++;
 //         }
 //       }
 //     }
-    
+
 //     if (voteCount > voteCountMax) {
 //       voteCountMax = voteCount;
 //       winner = votes[i];
-//       same = false;
-//     } else if (voteCount === voteCountMax) {
-//       same = true;
 //     }
-    
+
 //   }
 //   if (same === true) {
 //     result = "Mohon maaf juara tidak bisa ditentukkan dalam minggu ini";
 //   } else {
 //     result = "Selamat juaranya adalah " + winner + ", dengan total votes yang diterima " + voteCountMax;
 //   }
-  
+
 //   return result;
 // }
 
@@ -81,10 +75,10 @@ function americanGotTalent(votes) {
   let arr = [];
   let index = 0;
   let result = "";
-
+  
   votes = bubbleSort(votes);
   arr[0] = [votes[0]];
-
+  
   // console.log(arr[0])
   for (let i = 1; i < votes.length; i++) {
     if (votes[i] === arr[index][0]) {
@@ -94,7 +88,7 @@ function americanGotTalent(votes) {
       index++;
     }
   }
-
+  
   let winner = arr[0][0];
   let votesMax = arr[0].length;
   let same = true;
@@ -103,22 +97,18 @@ function americanGotTalent(votes) {
       votesMax = arr[i].length;
       winner = arr[i][0];
     }
-  }
-
-  
-  for (let i = 1; i < arr.length; i++) {
     if (arr[i].length !== arr[i-1].length) {
       same = false;
     }
   }
-
-  if (same === true) {
-        result = "Mohon maaf juara tidak bisa ditentukkan dalam minggu ini";
-      } else {
-        result = "Selamat juaranya adalah " + winner + ", dengan total votes yang diterima " + votesMax;
-      }
+  
+  if (!same) {
+    result = "Selamat juaranya adalah " + winner + ", dengan total votes yang diterima " + votesMax;
+  } else {
+    result = "Mohon maaf juara tidak bisa ditentukkan dalam minggu ini";
+  }
   return result;
-
+  
 }
 //[ 'Arby', 'Darren McFlurry', 'Lee Min Ho', 'Lee Min Ho' ]
 
@@ -135,7 +125,7 @@ function bubbleSort(input) {
       }
     }
   }
- return input;
+  return input;
 }
 
 

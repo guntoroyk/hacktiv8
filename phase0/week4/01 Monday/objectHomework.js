@@ -7,6 +7,19 @@
   }
 */
 
+function createObject() {
+  return {
+    name: "Guntoro Yudhy Kusuma",
+    batch: 34,
+    hobbies: "reading, swimming"
+  }
+}
+
+var a = createObject();
+console.log(a);
+
+// console.log(typeof a)
+
 // 2. Memasukkan array ke dalam object
 // Urutannya [NAME, CLUB, AGE]
 var insertToObjects = [
@@ -14,6 +27,17 @@ var insertToObjects = [
   ['Wakabayashi', 'Nankatsu', 20],
   ['Saitama', 'Hero Associate', 18]
 ]
+
+function createObject2(input) {
+  return {
+    NAME: input[0],
+    CLUB: input[1],
+    AGE: input[2]
+  }
+}
+
+var b = createObject2(insertToObjects);
+console.log(b);
 
 // 3. Membuat array menjadi unik
 
