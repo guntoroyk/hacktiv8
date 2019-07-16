@@ -2,15 +2,14 @@ function tukarBesarKecil(kalimat) {
     // you can only write your code here!
     let result = "";
     for (let i = 0; i < kalimat.length; i++) {
-        // check it is not  number?
         let karakter = kalimat[i];
-        // if (isNaN(karakter * 1)) {
+        // check is upper? if yes, convert it to lower
         if (karakter === karakter.toUpperCase()) {
             result += karakter.toLowerCase();
+        // check is lower? if yes, convert it to upper
         } else if (karakter === karakter.toLowerCase()) {
             result += karakter.toUpperCase();
         }
-        // }
     }
     
     return result;
