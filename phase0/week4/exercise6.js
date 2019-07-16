@@ -1,8 +1,7 @@
 function digitPerkalianMinimum(angka) {
-  // you can only write your code here!
   let faktor = [];
   let terpendek = 0;
-  
+
   for (let i = 1; i <= angka; i++) {
     if (angka % i === 0) {
       if (i !== faktor[1]) {
