@@ -46,11 +46,3 @@ console.log(checkAB('i am sick')); // false
 console.log(checkAB('you are boring')); // true
 console.log(checkAB('barbarian')); // true
 console.log(checkAB('bacon and meat')); // false
-
-
-var a = [0, 4]
-var b = [1, 2, 5] 
-
-// for (let i = 0; i < b.length || i < a.length; i++) {
-//     console.log(i)
-// }
