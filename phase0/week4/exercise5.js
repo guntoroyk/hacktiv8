@@ -13,7 +13,11 @@ function ubahHuruf(kata) {
         }
       }
 
-      indexHuruf++;
+      if (indexHuruf === alfabet.length - 1) {
+        indexHuruf = 0;
+      } else {
+        indexHuruf++;
+      }
       result += alfabet[indexHuruf];
     }
     return result;
@@ -24,4 +28,4 @@ function ubahHuruf(kata) {
   console.log(ubahHuruf('developer')); // efwfmpqfs
   console.log(ubahHuruf('javascript')); // kbwbtdsjqu
   console.log(ubahHuruf('keren')); // lfsfo
-  console.log(ubahHuruf('semangat')); // tfnbohbu
+  console.log(ubahHuruf('semangatzz')); // tfnbohbuaa
