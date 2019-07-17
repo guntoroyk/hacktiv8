@@ -4,11 +4,11 @@ function digitPerkalianMinimum(angka) {
 
   for (let i = 1; i <= angka; i++) {
     if (angka % i === 0) {
-      if (i !== faktor[1]) {
         faktor.push([i, angka/i]);
-      }
     }
   }
+
+  // console.log(faktor)
   
   for (let i = 0; i < faktor.length; i++) {
     let faktorDigabung = myJoin(faktor[i]);
