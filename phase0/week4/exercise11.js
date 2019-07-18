@@ -5,12 +5,14 @@ function shoppingTime(memberId, money) {
     let result = new Object();
     let listPurchased = [];
 
-
     if (memberId === undefined || memberId === "") {
         return "Mohon maaf, toko X hanya berlaku untuk member saja";
     } else if (money < 50000) {
         return "Mohon maaf, uang tidak cukup";
     } else {
+        result.memberId = memberId;
+        result.money = money;
+
         for (let i = 0; i < products.length; i++) {
             let product = products[i][0];
             let price = products[i][1];
@@ -19,16 +21,12 @@ function shoppingTime(memberId, money) {
                 listPurchased.push(product);
                 money -= price;
             }
-            
         }
         
-        result.memberId = memberId;
         result.listPurchased = listPurchased;
         result.changeMoney = money;
-
         return result;
     }
-
   }
   
   // TEST CASES
