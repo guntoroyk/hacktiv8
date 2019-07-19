@@ -78,4 +78,4 @@ function countProfit(shoppers) {
   //     shoppers: [],
   //     leftOver: 1,
   //     totalProfit: 0 } ]
-//   console.log(countProfit([])); //[]
+  console.log(countProfit([])); //[]
