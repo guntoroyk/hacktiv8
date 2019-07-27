@@ -19,6 +19,21 @@ output: 4
 */
 
 function secondLargest(angka) {
+    let sorted = false;
+
+    while(!sorted) {
+        sorted = true;
+        for (let i = 0; i < angka.length; i++) {
+            if (angka[i] < angka[i+1]) {
+                let temp = angka[i];
+                angka[i] = angka[i+1];
+                angka[i+1] = temp;
+                sorted = false;
+            }
+        }
+    }
+
+    return angka[1];
 
 }
 

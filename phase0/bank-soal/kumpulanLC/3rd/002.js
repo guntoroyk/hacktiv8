@@ -29,7 +29,18 @@ ex: Mr. *****, Mrs. *****, Ms. *****, Mr. *****
 */
 
 function addTitle (people) {
-	
+    let result = "";
+    for (let i = 0; i < people.length; i++) {
+        let nameWithTitle = "";
+        if (people[i][1] === 'male') nameWithTitle = "Mr. " + people[i][0];
+        if (people[i][1] === 'female' && people[i][2] === true) nameWithTitle = "Mrs. " + people[i][0];
+        if (people[i][1] === 'female' && people[i][2] === false) nameWithTitle = "Ms. " + people[i][0];
+        result += nameWithTitle;
+        if (i !== people.length - 1) result += ", ";
+    }	
+    
+    if (people.length === 0) result = "No data";
+    return result;
 }
 
 console.log(addTitle([['Sergei', 'male', true], ['Alyona', 'female', false]])); // Mr. Sergei, Ms. Alyona

@@ -23,7 +23,7 @@ Dilarang menggunakan sintaks for / while dan regex
 */
 
 function numberIterator(num) {
-  if (num === 0) return "0";
+  if (num === 0) return 0;
 
   return numberIterator(num - 1) + num;
 }

@@ -26,7 +26,16 @@ ATURAN CODING:
 */
 
 function reverseAll (arr) {
- 
+    let newArr = [];
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        let tempStr = ""
+        for (let j = 0; j < arr[i].length; j++) {
+            tempStr = arr[i][j] + tempStr;
+        }
+        newArr.push(tempStr);
+    }
+    return newArr; 
 }
 
 console.log(reverseAll(['dimitri', 'sergei', 'alexei']));

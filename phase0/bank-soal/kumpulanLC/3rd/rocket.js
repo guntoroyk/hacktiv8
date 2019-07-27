@@ -26,7 +26,36 @@ output: ['saya', 'dan', 'suka', 'makan', 'nasi']
 */
 
 function uniqueFinder(sentence) {
+    let result = [];
+    let lowerWord = "";
+    let exist = false;
 
+    if (sentence.length === 0) return "NO WORDS";
+    for (let i = 0; i < sentence.length; i++) {
+        if (sentence[i] !== " ") {
+            lowerWord += sentence[i].toLowerCase();
+        } else {
+            // console.log(lowerWord)
+            for (let j = 0; j < result.length; j++) {
+                if (lowerWord === result[j]) exist = true;
+            }
+            // console.log(exist)
+            if (!exist) {
+                result.push(lowerWord);
+            }
+            exist = false;
+            lowerWord = "";
+        }
+    }
+    for (let j = 0; j < result.length; j++) {
+        if (lowerWord === result[j]) exist = true;
+    }
+    // console.log(exist)
+    if (!exist) {
+        result.push(lowerWord);
+    }  
+
+    return result;
 }
 
 console.log(uniqueFinder('hello black dragon and hello red dragon')); // ['hello', 'black', 'dragon', 'and', 'red']

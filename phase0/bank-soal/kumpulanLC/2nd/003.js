@@ -28,7 +28,19 @@ ATURAN CODING:
 */
 
 function arrayMerge (firstData, secondData) {
+    for (let i = 0; i < secondData.length; i++) {
+       let exist = false;
+       for (let j = 0; j < firstData.length; j++) {
+           if (secondData[i] === firstData[j]) {
+            exist = true; 
+            break;
+           }
+       }
 
+       if (!exist) firstData.push(secondData[i]);
+    }
+
+    return firstData;
 }
 
 // Test cases

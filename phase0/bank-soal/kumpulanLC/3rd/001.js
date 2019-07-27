@@ -27,7 +27,20 @@ output: [[0], [0]]
 */
 
 function addEvenOdd (arrNum) {
+    let sumOfEven = 0;
+    let sumOfOdd = 0;
+    let result = [];
 
+    for (let i = 0; i < arrNum.length; i++) {
+        if (arrNum[i] % 2 === 0) {
+            sumOfEven += arrNum[i];
+        } else {
+            sumOfOdd += arrNum[i];
+        }
+    }
+    result.push([sumOfOdd]);
+    result.push([sumOfEven]);
+    return result;    
 }
 
 console.log(addEvenOdd([3, 5, 7, 8])); // [ [15], [8] ]

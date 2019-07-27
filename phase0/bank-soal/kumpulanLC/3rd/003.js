@@ -42,19 +42,40 @@ output: []
 */
 
 function kali(operand1, operand2) {
-
+  return operand1 * operand2;
 }
 function tambah(operand1, operand2) {
-
+  return operand1 + operand2;
 }
 function kurang(operand1, operand2) {
-
+  return operand1 - operand2;
 }
 function bagi(operand1, operand2) {
-
+  return operand1 / operand2;
 }
 function calculate(arrNumber) {
+  let results = [];
+  for (let i = 0; i < arrNumber.length; i++) {
+    let result = 0;
+    let data = arrNumber[i];
+    switch (data.operator) {
+      case "+":
+        result = tambah(data.operand1, data.operand2);
+        break;
+      case "-":
+        result = kurang(data.operand1, data.operand2);
+        break;
+      case "*":
+        result = kali(data.operand1, data.operand2);
+        break;
+      case "/":
+        result = bagi(data.operand1, data.operand2);
+        break;
+    }
+    results.push(result);
+  }
 
+  return results;
 }
 
 console.log(calculate([
