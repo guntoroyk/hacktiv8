@@ -1,0 +1,236 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 10px;
+    background-color: white;
+    z-index: 1;
+  }
+  
+  .navbar img {
+    width: 130px;
+    padding-left: 20px;
+  }
+  
+  .navbar .navmenu {
+    padding-top: 15px;
+    float: right;
+    margin-right: 40px;
+    font-weight: bold;
+    color: #1f4020;
+  }
+
+.navbar img {
+  width: 130px;
+  padding-left: 20px;
+}
+
+#navmenu {
+  padding-top: 15px;
+  float: right;
+  margin-right: 40px;
+  font-weight: bold;
+  color: #1f4020;
+}
+
+/* BANNER */
+
+.banner {
+    text-align: center;
+    background-image: url("https://1.bp.blogspot.com/-GY94JSYdOPw/V4I79qOs3WI/AAAAAAAABec/olixwXVMMRgspct_Rw05B5fdNDsSWESyACLcB/s1600/IMG_2359.JPG");  
+    min-height: 470px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: scroll;
+}
+
+.campName {
+  padding-top: 230px;
+  color: white;
+}
+
+.campName h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.campName p {
+  font-size: 1.25rem;
+}
+
+/* GRID */
+.container {
+  padding: 0 150px;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 1000px;
+    margin-top: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+
+/* GRID KANAN | GAMBAR DAN DESKRIPSI*/
+
+.grid .right {
+  padding: 0 20px;
+}
+
+.box {
+  padding: 20px;
+}
+
+.box img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.box p {
+  text-align: justify;
+}
+
+/* GRID KIRI | FORM PEMESANAN */
+
+.box h2 {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"] {
+  width: 100%;
+  padding: 7px 20px;
+  margin: 8px 0;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+
+  border: 1px solid #6f985b;
+  border-radius: 4px;
+}
+
+textarea {
+  padding: 7px 20px;
+  margin: 8px 0;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+
+  border: 1px solid #6f985b;
+  border-radius: 4px;
+}
+
+.orderBtn {
+  background-color: white;
+  color: #6f985b;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border: 2px solid #6f985b;
+  border-radius: 4px;
+}
+
+.orderBtn:hover {
+  background-color: #6f985b;
+  color: white;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* footer */
+
+.footer {
+  background-color: #1f4020;
+  width: 100%;
+  height: 330px;
+  color: white;
+}
+
+.column {
+  float: left;
+  margin-left: 10%;
+  padding-top: 2%;
+  line-height: 2;
+}
+.column h4 {
+  background-color: #6f985b;
+  text-align: center;
+  padding: 0 20px 0 20px;
+  border-radius: 40px;
+  margin-bottom: 5px;
+}
+
+.column p {
+  padding-left: 5px;
+}
+
+.column a {
+  color: white;
+  text-decoration: none;
+}
+
+/* .subscribe p {
+  font-size: 10px;
+  margin-top: 10px;
+}
+.subscribe label {
+  background-color: #de4b4b;
+  text-align: center;
+  padding: 2px 20px 2px 20px;
+  border-radius: 40px;
+}
+.subscribe input {
+  border-radius: 40px 0px 0px 40px;
+  width: 300px;
+  height: 30px;
+  border: none;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.subscribe button {
+  border-radius: 0px 40px 40px 0px;
+  width: 150px;
+  height: 30px;
+  background-color: #de4b4b;
+  border: none;
+  font-size: 20px; 
+  color: #f1f5f6;
+} */
+
+.copyright {
+  text-align: center;
+  background-color: #1f4020;
+  color: white;
+  padding-bottom: 2%;
+}
+
+.socmed {
+  display: grid;
+  grid-template-columns: 32px 32px;
+  grid-gap: 1em;
+  justify-content: center;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.socmed img {
+  width: 32px;
+}

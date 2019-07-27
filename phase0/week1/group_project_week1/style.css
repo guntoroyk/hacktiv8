@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+/* navbar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 10px;
+  background-color: white;
+  z-index: 1;
+}
+
+.navbar img {
+  width: 130px;
+  padding-left: 20px;
+}
+
+#navmenu {
+  padding-top: 15px;
+  float: right;
+  margin-right: 40px;
+  font-weight: bold;
+  color: #1f4020;
+}
+
+/* banner */
+
+.banner {
+  background-image: url("./img/banner.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Quicksand", sans-serif;
+}
+
+.banner div {
+  text-align: center;
+  padding: 300px;
+  color: #1f4020;
+}
+
+.banner button {
+  background-color: transparent;
+  color: #6f985b;
+  padding: 15px 32px;
+  margin: 10px;
+  font-size: 16px;
+  border: 1px solid #6f985b;
+  border-radius: 20px;
+}
+
+.banner button:hover {
+  background-color: #6f985b;
+  color: white;
+  padding: 15px 32px;
+  margin: 10px;
+  font-size: 16px;
+  border: 1px solid #6f985b;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* sekilas naik gunung */
+
+.activities {
+  padding: 0 10% 2% 10%;
+  text-align: justify;
+  line-height: 1.5em;
+  background-color: #232323;
+}
+
+.activities h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.activities p {
+  font-size: 1.1rem;
+}
+
+.box {
+  width: 100%;
+  height: 130px;
+  margin: 15px;
+  border-radius: 15px;
+  background-color: #6f985b;
+  box-shadow: 0 4px 8px 0;
+}
+
+.box .content {
+  font-size: 20px;
+  color: white;
+  line-height: 1.5;
+  padding-top: 25px;
+  margin-right: 30px;
+}
+
+.box img {
+  float: left;
+  width: 120px;
+  margin: 5px 10px 5px 5px;
+  border-radius: 15px;
+}
+
+/* card destination */
+
+.destination {
+  background-color: #f1f5f6;
+  padding: 50px 10% 50px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  color: #1f4020;
+  display: block;
+}
+
+.card img {
+  height: 300px;
+  width: 100%;
+}
+
+.card button {
+  padding: 12px;
+  color: white;
+  background-color: #6f985b;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+/* about */
+
+.about {
+  margin: 70px 0 100px 0;
+  padding: 0 10% 0 10%;
+  font-size: 22px;
+  text-align: justify;
+  color: #1f4020;
+  line-height: 1.5em;
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about p {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* footer */
+
+.footer {
+  background-color: #1f4020;
+  width: 100%;
+  height: 250px;
+  color: white;
+}
+
+.column {
+  float: left;
+  margin-left: 10%;
+  padding-top: 2%;
+  line-height: 2;
+}
+.column h4 {
+  background-color: #6f985b;
+  text-align: center;
+  padding: 0 20px 0 20px;
+  border-radius: 40px;
+  margin-bottom: 5px;
+}
+
+.column p {
+  padding-left: 5px;
+}
+
+.column a {
+  color: white;
+  text-decoration: none;
+}
+
+.socmed {
+  display: grid;
+  grid-template-columns: 32px 32px;
+  grid-gap: 1em;
+  justify-content: center;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.socmed img {
+  width: 32px;
+}
+
+/* .subscribe p {
+  font-size: 10px;
+  margin-top: 10px;
+}
+.subscribe label {
+  background-color: #de4b4b;
+  text-align: center;
+  padding: 2px 20px 2px 20px;
+  border-radius: 40px;
+}
+.subscribe input {
+  border-radius: 40px 0px 0px 40px;
+  width: 300px;
+  height: 30px;
+  border: none;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.subscribe button {
+  border-radius: 0px 40px 40px 0px;
+  width: 150px;
+  height: 30px;
+  background-color: #de4b4b;
+  border: none;
+  font-size: 20px;
+  color: #f1f5f6;
+} */
+
+.copyright {
+  text-align: center;
+  background-color: #1f4020;
+  color: white;
+  padding-bottom: 2%;
+}
+
+/* contact form */
+.contact {
+  width: 500px;
+  margin: 7% auto;
+}
+
+.contact h1 {
+  text-align: center;
+  color: #1f4020;
+  margin-bottom: 40px;
+}
+
+.contact h3 {
+  margin-top: 20px;
+}
+
+.contact form {
+  color: #1f4020;
+  box-sizing: border-box;
+}
+
+.contact input,
+textarea {
+  width: 100%;
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 8px 0;
+  border: 1px solid #6f985b;
+  border-radius: 4px;
+}
+
+.contact div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.submitBtn {
+  background-color: white;
+  color: #6f985b;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border: 2px solid #6f985b;
+  border-radius: 4px;
+}
+
+.submitBtn:hover {
+  background-color: #6f985b;
+  color: white;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border: 2px solid #6f985b;
+  border-radius: 4px;
+  cursor: pointer;
+}
