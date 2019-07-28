@@ -23,7 +23,27 @@
 
 function countMe(names) {
   //your code here
- 
+  let result = {};
+
+  for (let i = 0; i < names.length; i++) {
+    for (let j = 0; j < names[i].length; j++) {
+      let keys = Object.keys(result);
+      let exist = false;
+      for (let k = 0; k < keys.length; k++) {
+        if (names[i][j] === keys[k]) {
+          exist = true;
+          break;
+        }
+      }
+
+      if (!exist) {
+        result[names[i][j]] = 1;
+      } else {
+        result[names[i][j]] += 1;
+      }
+    }
+  }
+  return result;
 }
 
 console.log(countMe(['dimitri', 'awtian', 'icha']));
