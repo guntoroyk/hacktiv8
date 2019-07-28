@@ -25,7 +25,29 @@ Maka akan mengembalikan 4 karena bisa membeli oleh-oleh dengan harga 5000, 10000
 */
 
 function howManyGifts(maxBudget, gifts){
-  
+  let sorted = false;
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < gifts.length; i++) {
+      if (gifts[i] > gifts[i+1]) {
+        let temp = gifts[i];
+        gifts[i] = gifts[i+1];
+        gifts[i+1] = temp;
+        sorted = false;
+      }
+    }
+  }
+
+  // console.log(gifts)
+  let count = 0;
+  for (let i = 0; i < gifts.length; i++) {
+    if (maxBudget >= gifts[i]) {
+      maxBudget -= gifts[i];
+      count++;
+    }
+    // console.log(maxBudget)
+  }
+  return count;
 }
 
 console.log(howManyGifts(30000, [15000, 12000, 5000, 3000, 10000])); // 4
