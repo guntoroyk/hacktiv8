@@ -38,10 +38,7 @@ hari 4 	3 + (bac(2, 3, 3) * 2)
 
 function bacteriaReproduction(N, B, i) {
 	// start code here
-	let bakteri = B;
-
 	if (i === 1) return 1;
-
 	return B + bacteriaReproduction(N, B, i - 1) * N
 }
 

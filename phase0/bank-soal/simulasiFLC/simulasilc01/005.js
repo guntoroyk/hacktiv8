@@ -39,6 +39,29 @@ function invokeSpell (input) {
       { q: 2, w: 1, e: 0, spellName: 'Ghost Walk' },
   ];
 
+  let orb = {q: 0, w: 0, e: 0};
+
+  for (let i = 0; i < input.length; i++) {
+    switch (input[i]) {
+      case 'q':
+        orb.q += 1;
+        break;
+      case 'w':
+        orb.w += 1;
+        break;
+      case 'e':
+        orb.e += 1;
+        break;
+    }
+  }
+
+  // console.log(orb)
+  for (let i = 0; i < spells.length; i++) {
+    if (spells[i].q === orb.q && spells[i].w === orb.w && spells[i].e === orb.e) {
+      return spells[i].spellName;
+    }
+  }
+  return "Combination does not exist"
   // your code here
 }
 

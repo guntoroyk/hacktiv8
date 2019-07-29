@@ -30,15 +30,12 @@ RULES
 */
 
 function countDistanceLetterRecursive(sentence, letter) {
-for (let i=0; i<sentence.letter; i++){
-    if (sentence[i]===letter){
-        var res = i
-    }
+    if (sentence[0] === letter) return 1;
+    
+    return 1 + countDistanceLetterRecursive(sentence.slice(1), letter);
 }
-return res
-}
-//                                        12345678901234567890
+//                                       
 console.log(countDistanceLetterRecursive('12104123', '1')); // 1
 console.log(countDistanceLetterRecursive('the quick brown fox', 'o')); // 13
-console.log(countDistanceLetterRecursive('hahaha', 'a')); // 
+console.log(countDistanceLetterRecursive('hahaha', 'a')); // 2
 

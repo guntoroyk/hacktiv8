@@ -27,12 +27,42 @@ RULES:
 */
 
 function initialGroupingDescending(studentsArr) {
-
+  let result = [];
   // Only Code Here
+  let sorted = false
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < studentsArr.length; i++) {
+      if (studentsArr[i] < studentsArr[i+1]){
+        let temp = studentsArr[i];
+        studentsArr[i] = studentsArr[i+1];
+        studentsArr[i+1] = temp;
+        sorted = false;
+      }
+    }
+  }
+  
+  // console.log(studentsArr)
+  let index = 0;
+  for (let i = 0; i < studentsArr.length; i++) {
+    if (i === 0) {
+      result.push([studentsArr[i][0], studentsArr[0]]);
+    } else {
+      if (studentsArr[i][0] === result[index][0][0]) {
+        // console.log(index)
+        result[index].push(studentsArr[i]);
+      } else {
+        result.push([studentsArr[i][0], studentsArr[i]]);
+        index++;
+      }
+    }
+  }
 
+  
+  return result;
 }
 
-console.log(initialGroupingDescending(['Budi', 'Badu', 'Joni', 'Jono']));
+console.log(initialGroupingDescending(['Joko', 'Budi', 'Badu', 'Joni', 'Jono']));
 /*
 [
   [ 'J', 'Joni', 'Jono' ],

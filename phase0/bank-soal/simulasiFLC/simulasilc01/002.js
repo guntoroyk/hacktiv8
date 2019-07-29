@@ -55,8 +55,69 @@ RULE:
 
 */
 
+/**
+ * PSEUDOCODE
+ * STORE arrOperand1 and arrOperand2 with any value
+ * STORE multiplied with empty string
+ * STORE result with 1
+ * 
+ * IF length of arrOperand1 or length of arrOperand2 equal to 0 THEN
+ *    return 0
+ * END IF
+ * 
+ * STORE i with 0
+ * WHILE i less than length of arrOperand1 
+ *    STORE a with value of arrOperand1 in i
+ *    STORE b with value of arrOperand2 in i
+ *    
+ *    IF a is undefined THEN 
+ *      SET a to 0
+ *    END IF
+ *    IF b is undefined THEN
+ *      SET b to 0
+ *    END IF
+ *    
+ *    CALCULATE a times by b
+ *    PUSH the calculation result to multiplied
+ * 
+ *    CALCULATE i plus by 1
+ * END WHILE
+ * 
+ * SET i with 0
+ * WHILE i less than length of multiplied 
+ *    IF (value of multipled in i modulus by 2 is not equal to 0) THEN
+ *        CALCULATE result times by value of multiplied in i
+ *        SET result with calculation result
+ *        CALCULATE i plus by 1
+ * END WHILE
+ * 
+ * RETURN result
+ * 
+ */
+
 function multiplyTheOdds(arrOperand1, arrOperand2) {
   // your code here
+  let multiplied = [];
+  let result = 1;
+
+  if (arrOperand1.length === 0 && arrOperand2.length === 0) return 0;
+
+  for (let i = 0; i < arrOperand1.length; i++) {
+    let a = arrOperand1[i];
+    let b = arrOperand2[i];
+
+    if (a === undefined) a = 0;
+    if (b === undefined) b = 0;
+
+    multiplied.push(a * b);
+  }
+
+  for (let i = 0; i < multiplied.length; i++) {
+    if (multiplied[i] % 2 !== 0) {
+      result *= multiplied[i];
+    }
+  }
+  return result;
 }
 
 console.log(multiplyTheOdds([3, 5, 2], [7, 5, 4])); //525

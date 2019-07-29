@@ -8,8 +8,8 @@ function akan mengembalikan string "Sekarang". Jika tidak, maka akan mengembalik
 sudah di-format (kombinasi tahun, hari, jam, menit dan detik).
 
 Contoh:
-  formatDuration(62)    // "1 tahun dan 2 detik"
-  formatDuration(3662)  //  "1 jam, 1 menit dan 2 detik"
+formatDuration(62)    // "1 tahun dan 2 detik"
+formatDuration(3662)  //  "1 jam, 1 menit dan 2 detik"
 Spasi harus persis seperti output yang diharapkan
 
 Aturan:
@@ -36,53 +36,71 @@ mengembalikan nilai "61 detik", tapi "1 menit dan 1 detik" sebagai gantinya.
 Untuk soal ini, asumsikan bahwa 1 tahun = 365 hari, dan 1 hari = 24 jam
 
 Urutan satuan waktu dari terbesar ke terkecil:
- - Tahun Hari Jam Menit Detik
+- Tahun Hari Jam Menit Detik
 
 */
 
 function formatDuration(seconds) {
-obj = {
-  tahun : 0,
-  bulan :0,
-  hari : 0,
-  jam : 0,
-  menit : 0,
-  detik : 0,
-}
-var menit = 60
-var jam = menit*60
-var hari = jam*24
-var bulan = hari*31
-var tahun = bulan*12
-for (let i=0 ; i<=seconds; i++){
-  if (seconds>=tahun){
-    obj.tahun +=1
-    seconds-=tahun
-  }  if (seconds>=bulan && seconds<tahun){
-    obj.bulan +=1
-    seconds-=bulan
-  }   if (seconds>=hari && seconds<bulan){
-    obj.hari +=1
-    seconds-=hari
-  }  if (seconds>=jam && seconds<hari){
-    obj.jam +=1
-    seconds-=jam
-  }  if (seconds>=menit && seconds<jam){
-    obj.menit +=1
-    seconds-=menit
-  }  if (seconds>=1 && seconds<menit){
-    obj.detik +=seconds
+  let result = [];
+  let duration = {
+    tahun: 365 * 24 * 60 * 60,
+    // bulan: 30 * 24 * 60 * 60,
+    hari: 24 * 60 * 60,
+    jam: 60 * 60,
+    menit: 60,
+    detik: 1
   }
-}
-console.log('>>>>>')
-return obj
+  
+  if (seconds === 0) return "Sekarang";
+  
+  let keys = Object.keys(duration);
+  
+  for (let i = 0; i < keys.length; i++) {
+    let bagi = Math.floor(seconds / duration[keys[i]]);
+    let sisa = seconds - (bagi * duration[keys[i]]);
+    // console.log(ci);
+    if (sisa >= 0) {
+      if (bagi > 0) {
+        result.push(bagi + " " + keys[i]);
+        
+        seconds = sisa;
+      }
+      // break;
+    }
+    // console.log(count)
+  }
+  
+  // for (key in duration) {
+  //   let bagi = Math.floor(seconds / duration[key]);
+  //   let sisa = seconds - (bagi * duration[key]);
+  //   console.log("bagi", bagi)
+  //   console.log("sisa", sisa)
+  //   if (sisa >= 0) {
+  //     if (bagi > 0) {
+  //       result += bagi + " " + key;
+  
+  //       seconds = sisa;
+  //     }
+  //   }
+  // }
+  
+  let strResult = "";
+  for (let i = 0; i < result.length; i++) {
+    strResult += result[i];
+    if (i === result.length - 2) {
+      strResult += " dan "
+    } else if (i !== result.length - 1) {
+      strResult += ", "
+    } 
+  }
+  return strResult;
 }
 
 console.log(formatDuration(10000)); // 2 jam, 46 menit dan 40 detik
 // console.log(formatDuration(3662)); // 1 jam, 1 menit dan 2 detik
 // console.log(formatDuration(62)); // 1 menit dan 2 detik
 // console.log(formatDuration(500000)); // 5 hari, 18 jam, 53 menit dan 20 detik
-console.log(formatDuration(2000000)); // 23 hari, 3 jam, 33 menit dan 20 detik
-//console.log(formatDuration(94608000)); // 3 tahun
+// console.log(formatDuration(2000000c)); // 23 hari, 3 jam, 33 menit dan 20 detik
+console.log(formatDuration(94608000)); // 3 tahun
 console.log(formatDuration(126144060)); // 4 tahun dan 1 menit
 // console.log(formatDuration(0)); // Sekarang

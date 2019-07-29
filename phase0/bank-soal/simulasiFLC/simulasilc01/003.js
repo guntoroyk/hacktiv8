@@ -35,6 +35,30 @@ RULE:
 
 function minDistanceBetweenGreatest(arr) {
   // your code here
+  let greatest = arr[0];
+  let indexsOfGreatest = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > greatest) greatest = arr[i];
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === greatest) indexsOfGreatest.push(i);
+  }
+
+  // console.log(indexsOfGreatest)
+  if (indexsOfGreatest.length < 2) return 0;
+
+  let minDistance = 0;
+  for (let i = 0; i < indexsOfGreatest.length; i++) {
+    if (i === 0) minDistance = (indexsOfGreatest[i+1] - indexsOfGreatest[i]);
+    else {
+      if (indexsOfGreatest[i+1] - indexsOfGreatest[i] < minDistance) {
+        minDistance = indexsOfGreatest[i+1] - indexsOfGreatest[i];
+      }
+    }
+  }
+  return minDistance;
 }
 
 console.log(minDistanceBetweenGreatest([ 3, 5, 2, 3, 5, 3, 5 ])); //2
