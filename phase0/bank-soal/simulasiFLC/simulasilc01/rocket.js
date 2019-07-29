@@ -44,7 +44,6 @@ function formatDuration(seconds) {
   let result = [];
   let duration = {
     tahun: 365 * 24 * 60 * 60,
-    // bulan: 30 * 24 * 60 * 60,
     hari: 24 * 60 * 60,
     jam: 60 * 60,
     menit: 60,
@@ -54,35 +53,18 @@ function formatDuration(seconds) {
   if (seconds === 0) return "Sekarang";
   
   let keys = Object.keys(duration);
-  
-  for (let i = 0; i < keys.length; i++) {
-    let bagi = Math.floor(seconds / duration[keys[i]]);
-    let sisa = seconds - (bagi * duration[keys[i]]);
-    // console.log(ci);
+ 
+  for (key in duration) {
+    let bagi = Math.floor(seconds / duration[key]);
+    let sisa = seconds - (bagi * duration[key]);
     if (sisa >= 0) {
       if (bagi > 0) {
-        result.push(bagi + " " + keys[i]);
-        
+        result.push(bagi + " " + key);
+  
         seconds = sisa;
       }
-      // break;
     }
-    // console.log(count)
   }
-  
-  // for (key in duration) {
-  //   let bagi = Math.floor(seconds / duration[key]);
-  //   let sisa = seconds - (bagi * duration[key]);
-  //   console.log("bagi", bagi)
-  //   console.log("sisa", sisa)
-  //   if (sisa >= 0) {
-  //     if (bagi > 0) {
-  //       result += bagi + " " + key;
-  
-  //       seconds = sisa;
-  //     }
-  //   }
-  // }
   
   let strResult = "";
   for (let i = 0; i < result.length; i++) {
@@ -97,10 +79,10 @@ function formatDuration(seconds) {
 }
 
 console.log(formatDuration(10000)); // 2 jam, 46 menit dan 40 detik
-// console.log(formatDuration(3662)); // 1 jam, 1 menit dan 2 detik
-// console.log(formatDuration(62)); // 1 menit dan 2 detik
-// console.log(formatDuration(500000)); // 5 hari, 18 jam, 53 menit dan 20 detik
-// console.log(formatDuration(2000000c)); // 23 hari, 3 jam, 33 menit dan 20 detik
+console.log(formatDuration(3662)); // 1 jam, 1 menit dan 2 detik
+console.log(formatDuration(62)); // 1 menit dan 2 detik
+console.log(formatDuration(500000)); // 5 hari, 18 jam, 53 menit dan 20 detik
+console.log(formatDuration(2000000)); // 23 hari, 3 jam, 33 menit dan 20 detik
 console.log(formatDuration(94608000)); // 3 tahun
 console.log(formatDuration(126144060)); // 4 tahun dan 1 menit
-// console.log(formatDuration(0)); // Sekarang
+console.log(formatDuration(0)); // Sekarang
