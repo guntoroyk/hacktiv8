@@ -16,8 +16,8 @@ Let's start our own wizardy, shall we?
 
 [RULE]
 - Wajib menuliskan algoritma/pseudocode. Tidak ada algoritma/pseudocode atau
-  algoritma/pseudocode tidak match dengan kode maka indikasi soal tidak
-  diselesaikan secara pribadi dan tidak akan dinilai.
+algoritma/pseudocode tidak match dengan kode maka indikasi soal tidak
+diselesaikan secara pribadi dan tidak akan dinilai.
 - Dilarang menggunakan Regex (.match, .test, dan sebagainya)
 - Dilarang menggunakan method .map, .filter, atau .reduce!
 
@@ -25,6 +25,36 @@ Let's start our own wizardy, shall we?
 
 function whosTheWinner(goals) {
   // your code here 
+  let teams = {};
+  for (let i = 0; i < goals.length; i++) {
+    let exist = false;
+    for (key in teams) {
+      if (goals[i] === key) {
+        exist = true;
+        break;
+      }
+    }
+    
+    if (!exist){
+      teams[goals[i]] = 1;
+    } else {
+      teams[goals[i]]++;
+    }
+  }
+  
+  let winner = "";
+  let winnerPoint = 0;
+  for (key in teams) {
+    // console.log(winner.key)
+    if (teams[key] > winnerPoint) {
+      winnerPoint = teams[key];
+      winner = key;
+    } 
+  }
+
+  if (teams.Gryffindor === teams.Slytherin || goals.length === 0) return "Draw, pertandingan akan dilanjutkan dengan penalty kick!"; 
+
+  return winner + " Juara Futsal Hogwarts 2018";
 }
 
 // TEST CASES

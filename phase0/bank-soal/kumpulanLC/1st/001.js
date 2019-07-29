@@ -24,3 +24,17 @@ Jika nilai mahasiswa kurang dari 0 atau lebih dari 100 maka tampilkan 'Nilai Inv
  * 7. Jika nilai kurang dari atau sama dengan 79 maka set variabel nilaiHuruf dengan 'B'
  * 8. Jika nilai kurang dari atau sama dengan 100 maka set variabel nilaiHuruf dengan 'A'
  */
+
+ function cekNilai(nama, nilai) {
+
+     if (nilai < 0 || nilai > 100) return "Nilai Invalid";
+     if (nilai <= 34) return "E";
+     if (nilai <= 49) return "D";
+     if (nilai <= 64) return "C";
+     if (nilai <= 79) return "B";
+     if (nilai <= 100) return "A";
+ }
+
+ console.log(cekNilai("igun", 90))
+ console.log(cekNilai("igun", 70))
+ console.log(cekNilai("igun", 34))
