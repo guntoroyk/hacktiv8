@@ -16,13 +16,21 @@ input: [ 10, 20, 36, 59 ] dan [ 5, 10, 15, 59 ]
 output: [20, 36]
 
 RULES:
- - WAJIB MENGGUNAKAN ALGORITMA/PSEUDOCODE
- - DILARANG MENGGUNAKAN .map, .filter atau .reduce!
+- WAJIB MENGGUNAKAN ALGORITMA/PSEUDOCODE
+- DILARANG MENGGUNAKAN .map, .filter atau .reduce!
 
 */
 
 function findNotRelative(arr1, arr2) {
-  
+    let result = [];
+    for (let i = 0; i < arr1.length; i++) {
+        let exist = false;
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) exist = true;
+        }
+        if (!exist) result.push(arr1[i]);
+    }
+    return result;
 }
 
 console.log(findNotRelative([ 3, 6, 10, 12, 15 ], [ 1, 3, 5, 10, 16 ])); // [ 6, 12, 15]

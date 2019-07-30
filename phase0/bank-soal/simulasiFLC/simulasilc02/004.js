@@ -24,26 +24,31 @@ output: ['dont', 'know', 'what', 'have', 'lose']
 */
 
 function averageLengthWord(words) {
- var wordsLength = words.length 
- words += ' '
- var toArray =[]
- var temp = ''
- for (let i=0; i<words.length; i++){
-     if (words[i]===' '){
-         toArray.push(temp)
-         temp = ''
-     }else {
-         temp += words[i]
-     }
- } 
- var averageLength = wordsLength/toArray.length
- var result = []
- for (let i=0; i<toArray.length; i++){
-     if (toArray[i].length===averageLength){
-         result.push(toArray[i])
-     }
- }
- return result
+    let arrWord = [];
+
+    let word = "";
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] !== " ") {
+            word += words[i];
+        } else  {
+            arrWord.push(word);
+            word = "";
+        }
+    }
+    arrWord.push(word);
+    
+    let meanLength = 0;
+    let totalLength = 0;
+    for (let i = 0; i < arrWord.length; i++) {
+        totalLength += arrWord[i].length;
+    }
+    meanLength = Math.round(totalLength / arrWord.length);
+
+    let result = [];
+    for (let i = 0; i < arrWord.length; i++) {
+        if (arrWord[i].length === meanLength) result.push(arrWord[i]);
+    }
+    return result;
 }
 
 console.log(averageLengthWord('dd dddd dddddd dddddddd'));

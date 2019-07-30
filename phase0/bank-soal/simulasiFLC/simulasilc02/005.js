@@ -29,20 +29,29 @@ Dilarang menggunakan sintaks Set atau Regex
 */
 
 function initialObjectGrouping(studentsArr) {
-var sameName = []
-for (let i=0; i<studentsArr; i++){
-  var boleean = false
-  for (let j=0; j<sameName.length; j++){
-    if (studentsArr[i][0]===sameName[j][0][0]){
-    sameName[j].push(studentsArr[i])
-    boleean = true
+  let obj = {};
+
+  for (let i = 0; i < studentsArr.length; i++) {
+    if (i === 0) {
+      obj[studentsArr[i][0]] = [studentsArr[i]];
+    } else {
+      keys = Object.keys(obj);
+      // console.log(keys)
+      let exist = false;
+      for (let j = 0; j < keys.length; j++) {
+        if (studentsArr[i][0] === keys[j]) exist = true;
+      }
+  
+      if (exist) {
+        obj[studentsArr[i][0]].push(studentsArr[i])
+      } else {
+        obj[studentsArr[i][0]] = [studentsArr[i]];
+      }
+  
     }
+   
   }
-  if (boleean===false){
-    sameName.push(studentsArr[i])
-  }
-}
-return sameName
+  return obj;
 }
 
 console.log(initialObjectGrouping(['Budi', 'Badu', 'Joni', 'Jono']));

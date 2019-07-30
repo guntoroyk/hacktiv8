@@ -16,9 +16,29 @@ RULES
 
 
 function palindromeRecursive(sentence) {
-
+    if (sentence.length === 1) return true;
+    if (sentence[0] !== sentence[sentence.length - 1]) return false;
+    // console.log(sentence.slice(1))
+    return palindromeRecursive(sentence.slice(1, sentence.length - 1));
 }
 
+
+/**
+ * katak
+ * k = k
+ * 
+ * ata
+ * a = a
+ * 
+ * t
+ * 
+ * katek
+ * k = k
+ * 
+ * ate
+ * 
+ * 
+ */
 // TEST CASES
 console.log(palindromeRecursive('katak')); // true
 console.log(palindromeRecursive('blanket')); // false
