@@ -13,9 +13,28 @@ diubah-ubah dan asumsi uang kembaliannya selalu cukup dengan jumlah ketersediaan
 */
 
 function hitungKembalian(bayar, harga){
+  if (bayar < harga) return "uang tidak cukup";
+  let kembali = bayar - harga;
+  let obj = {};
+  let pecahan = [100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100];
 
-  
- 
+  for (let i = 0; i < pecahan.length; i++) {
+    let bagi = Math.floor(kembali / pecahan[i]);
+    let sisa = kembali % pecahan[i];
+    // console.log(bagi)
+    // console.log(sisa)
+    if (sisa >= 0 && bagi > 0) {
+      kembali = sisa;
+      obj[pecahan[i]] = bagi;
+    } 
+  }
+
+  // for (key in obj) {
+  //   if (obj[key] === 0) {
+  //     delete obj[key];
+  //   }
+  // }
+  return obj;
 }
 
 // Test Case
@@ -30,14 +49,14 @@ output
 */
 
 // Test Case
-// console.log(hitungKembalian(40000, 35000));
+console.log(hitungKembalian(40000, 35000));
 /*
 output
   { '5000': 1 }
 */
 
 // Test Case 3
-// console.log(hitungKembalian(920000, 80000));
+console.log(hitungKembalian(920000, 80000));
 /*
 output
   { 
@@ -49,9 +68,9 @@ output
 */
 
 // TEST CASE 4
-// console.log(hitungKembalian(50000,50000)); // {}
+console.log(hitungKembalian(50000,50000)); // {}
 
 // TEST CASE 5
-// console.log(hitungKembalian(50000,500000)); // Uang tidak cukup
+console.log(hitungKembalian(50000,500000)); // Uang tidak cukup
 
 

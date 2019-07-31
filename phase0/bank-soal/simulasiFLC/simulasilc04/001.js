@@ -20,21 +20,45 @@ formatUang(2000)
 output: Rp2.000,00
 */
 
-// PSEUDOCODE
-/*
-STORE 'numberStr' with 'number' convert to string
-STORE 'output' with blank string
 
-WHILE length of 'numberStr' less than equal to 3 
-      THEN 'output' is 'Rp'concatenate numberStr concatenate', 00'
-WHILE length of 'numberStr' greater than 3
-     
+    
+/*
 
 DISPLAY 'output'
 */
+
+/**
+ *  PSEUDOCODE
+ *  STORE number with any number
+ *  STORE str with empty string
+ *  STORE count with 1; 
+ *  CONVERT number to string
+ *  STORE i with length of number minus 1
+ *  WHILE i greater or same than 0 
+ *     SET str with value of number in i plus by str
+ *     IF count mod by 3 equal to 0 and i not 0 THEN
+ *        SET str with "." plus by str
+ *     END IF
+ *     CALCULATE count plus by 1
+ *     CALCULATE i minus by 1
+ *  END WHILE
+ *  DISPLAY str
+ */
 function formatUang(number) {
   //code here
-  
+  number = number.toString();
+  let str = "";
+  count = 1;
+  for (let i = number.length - 1; i >= 0; i--) {
+    str = number[i] + str;
+    if (count % 3 === 0 && i !== 0) {
+      str = "." + str;
+    }
+    count++;
+  }
+  // console.log(str)
+  str = "Rp" + str + ",00";
+  return str;
 }
 
 console.log(formatUang(7500)); // Rp7.500,00

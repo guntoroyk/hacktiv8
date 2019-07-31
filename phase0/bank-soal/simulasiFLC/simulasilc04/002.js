@@ -14,31 +14,51 @@ rules:
 examples:
 JIKA INPUT KALIMAT = 'HAHAHA PAYAH LOOO' dan INPUT SENSOR = 'PAYAH'
 MAKA OUTPUT = 'HAHAHA ***** LOOO'
-                    
+
 */
 
 // PSEUDOCODE
 /*
-STORE 'kata' with sentence split
-STORE 'asterix' with blank
-STORE 'output' with blank
 
-WHILE i less than 'words' length
-    THEN asterix equal with *
-WHILE j lest than 'sentence' length
-    IF 'kata'(j) equal to 'words'
-    THEN 'output' is 'asterix'
-    IF 'kata'(j) not equal to 'words'
-    THEN 'output' is kata (j)
-
-DISPLAY 'output'
 
 */
 
 
 function sensorSentence ( sentence, words ) {
   // Your code here
- 
+  let result = "";
+  let sentences = [];
+
+  let word = "";
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] !== " ") {
+      word += sentence[i];
+    } else {
+      sentences.push(word);
+      word = "";
+    }
+  }
+  sentences.push(word);
+
+  // console.log(sentences);
+  
+  for (let i = 0; i < sentences.length; i++) {
+    if (sentences[i] === words) {
+      let temp = "";
+      for (let j = 0; j < sentences[i].length; j++) {
+        temp += "*";
+      }
+      sentences[i] = temp;
+    }
+  }
+  // console.log(sentences);
+  for (let i = 0; i < sentences.length; i++) {
+    result = result + sentences[i];
+    if (i !== sentences.length - 1) {
+      result += " "
+    }
+  } 
+  return result;
 }
 
 

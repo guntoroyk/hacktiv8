@@ -20,20 +20,19 @@ yang tipe data-nya berupa String.
 */
 
 function miniSudokuBoard(text) {
-var sudoku = []
-for (let i=0; i<3; i++){
-  sudoku.push([])
-}
-for (let i=0; i<text.length; i++){
-  if (i>=0 & i<3){
-    sudoku[0].push(text[i])
-  }  if (i>=3 & i<6){
-    sudoku[1].push(text[i])
-  }if (i>=6 & i<9){
-    sudoku[1].push(text[i])
+  if (text.length === 0) return "Empty board";
+  if (text.length !== 9) return "Invalid input";
+
+  let result = [];
+  let row = [];
+  for (let i = 0; i < text.length; i++) {
+    row.push(text[i]);
+    if (row.length === 3) {
+      result.push(row);
+      row = [];
+    }
   }
-}
-return sudoku
+  return result;
 }
 
 console.log(miniSudokuBoard('005030081'));

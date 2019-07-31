@@ -16,13 +16,13 @@ beberapa kata berupa angka dalam bahasa Inggris.
 
 District yang akan diserang selanjutnya adalah total dari angka yang ditemukan di kode tersebut!
 Karena tiga narapidana ini benci dengan sel mereka,
- mereka tidak memasukkan angka 1, 5, dan 9.  Berikut ini adalah bahasa Inggris untuk angka yang digunakan:
-  TWO -> 2
-  THREE -> 3
-  FOUR -> 4
-  SIX -> 6
-  SEVEN -> 7
-  EIGHT -> 8
+mereka tidak memasukkan angka 1, 5, dan 9.  Berikut ini adalah bahasa Inggris untuk angka yang digunakan:
+TWO -> 2
+THREE -> 3
+FOUR -> 4
+SIX -> 6
+SEVEN -> 7
+EIGHT -> 8
 
 Contoh Kode 1:
 WTWTHROETEO.
@@ -32,52 +32,46 @@ TWO TWO THREE => 2, 2, dan 3. 2 + 2 + 3 = 7, maka targetnya District 7!
 Contoh Kode 2:
 HSEVTEEING.
 Apabila diacak mendapatkan kombinasi:
- SEVEN EIGHT => 7 dan 8. 7 + 8 = 15, maka targetnya District 15!
+SEVEN EIGHT => 7 dan 8. 7 + 8 = 15, maka targetnya District 15!
 
 Contoh Kode 3:
 FNEXSIVUSEOR. Apabila diacak mendapatkan kombinasi:
- FOUR SIX SEVEN => 4, 6, dan 7. 4 + 6 + 7 = 17, maka targetnya District 17!
+FOUR SIX SEVEN => 4, 6, dan 7. 4 + 6 + 7 = 17, maka targetnya District 17!
 
 Contoh Kode 4:
 WTO. Apabila diacak mendapatkan kombinasi:
- TWO => 2. Maka targetnya District 2!
+TWO => 2. Maka targetnya District 2!
 
 HINT:Urutan angka mana yang keluar lebih dulu tidak penting!
 Yang penting adalah kita mendapatkan district berapa yang menjadi target!
 */
 
 function isExist(input, check) {
-  let result = true;
-  for (let i = 0; i < check.length; i++) {
-    let exist = false;
-    for (let j = 0; j < input.length; j++) {
-      if (input[i] === check[j]) {
-        exist = true;
-        break;
-      }
+    let result = true;
+    let index = [];
+    for (let i = 0; i < check.length; i++) {
+        let exist = false;
+        for (let j = 0; j < input.length; j++) {
+            if (input[i] === check[j]) {
+                exist = true;
+                console.log(j)
+                break;
+            }
+        }
+        if (!exist) result = false;
     }
-    if (!exist) result = false;
-  }
-  return result;
+    // console.log(index)
+    return result;
 }
-// console.log(isExist('WOsss', 'TWO'));
+console.log(isExist('WTWTHROETEO', 'TWO'));
 
 function nextTargetArea(code) {
-  // Code Hanya Disini!
-  let huruf = ['TWO', 'THREE', 'FOUR', 'SIX', 'SEVEN', 'EIGHT'];
-  let angka = [2, 3, 4, 6, 7, 8];
-  let ada = [];
-
-  for (let i = 0; i < huruf.length; i++) {
-    if (isExist(code, huruf[i]) {
-      ada.push(angka[i]);
-    }
-  }
- console.log(ada);
   
+    
 }
 
-console.log(nextTargetArea('WTO')); // "District 2 is the next target!"
+
+// console.log(nextTargetArea('WTO')); // "District 2 is the next target!"
 // console.log(nextTargetArea('WTWTHROETEO')); // "District 7 is the next target!"
 // console.log(nextTargetArea('HSEVTEEING')); // "District 15 is the next target!"
 // console.log(nextTargetArea('FNEXSIVUSEOR')); // "District 17 is the next target!"

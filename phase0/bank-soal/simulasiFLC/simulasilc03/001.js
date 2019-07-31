@@ -24,9 +24,39 @@
   - WAJIB MENYERTAKAN ALGORITMA/PSEUDOCODE, jika tidak ada maka dianggap tidak mengerjakan
   - DILARANG MENGGUNAKAN BUILT IN FUNCTION .indexOf !
 
+  PSEUDOCODE
+
+  STORE biasa with string a to z
+  STORE h8bi with string '!@#$%^&*()-+1234567890[]{}'
+  STORE result with empty string 
+  STORE i with 0
+  WHILE i less than length of input
+    STORE j with 0
+    WHILE j less than length of biasa
+      IF value of input in i same with value of biasa in j THEN
+        SET result with result plus by value of h8bi in j
+        BREAK
+      END IF
+    END WHILE
+  END WHILE
+  RETURN result
+
 */
 function encrypt(input) {
   // your code here
+  let biasa = "abcdefghijklmnopqrstuvwxyz";
+  let h8bi = "!@#$%^&*()-+1234567890[]{}";
+
+  let result = "";
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < biasa.length; j++) {
+      if (input[i] === biasa[j]) {
+        result += h8bi[j];
+        break;
+      }
+    }
+  }
+  return result;
   
 }
 
