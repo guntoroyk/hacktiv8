@@ -49,7 +49,6 @@
     }
     // code here
     let userJob = user.job;
-    let userWeapon = user.weapon;
     let newWeaponType = undefined;
     
     for (key in weapons) {

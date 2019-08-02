@@ -23,26 +23,26 @@ function changeXRecursive(data, jenis) {
   if (data.length === 0) return "";
 
   if (jenis === 'ganjil') {
-    let ganjil = false;
-    if (Number(data[0] % 2 !== 0)) {
-      ganjil = true;
-    }
+    // let ganjil = false;
+    // if (Number(data[0] % 2 !== 0)) {
+    //   ganjil = true;
+    // }
   
     let temp = "";
-    if (ganjil) {
+    if (Number(data[0] % 2 !== 0)) {
       temp = data[0];
     } else {
       temp = "x";
     }
     return temp + changeXRecursive(data.slice(1), jenis);
   } else {
-    let genap = false;
-    if (Number(data[0] % 2 === 0)) {
-      genap = true;
-    }
+    // let genap = false;
+    // if (Number(data[0] % 2 === 0)) {
+    //   genap = true;
+    // }
   
     let temp = "";
-    if (genap) {
+    if (Number(data[0] % 2 === 0)) {
       temp = data[0];
     } else {
       temp = "x";
