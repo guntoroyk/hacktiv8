@@ -56,11 +56,16 @@
 function train(pokemon, candy) {
   // code here
   
-  let result = ""
+  let result = "";
   let evolved = [];
+  let evolution = "";
   pokemon.level += candy;
   // console.log(pokemon.level)
   // console.log(pokemon.evolutionLine.length)
+
+  if (pokemon.evolutionLine === undefined) {
+    return'Congratulations, your ' + pokemon.name + " grew to LV. " + pokemon.level + "!";
+  }
 
   for (let i = 0 ; i < pokemon.evolutionLine.length; i++) {
     let evolutionLine = pokemon.evolutionLine[i];
@@ -70,9 +75,29 @@ function train(pokemon, candy) {
       }
   }
 
-  for (let i = 0; i < evolved.length; i++) {
-    console.log("Dia berevolusi ke "+ evolved[i])
+  // for (let i = 0; i < evolved.length; i++) {
+  //   console.log("Dia berevolusi ke "+ evolved[i])
+  // }
+
+  result = "Congratulations, your " + pokemon.name + " grew to LV. " + pokemon.level + "! And it evolved into";
+
+  // console.log(evolved);
+  if (evolved.length > 1) {
+    for (let i = 0; i < evolved.length; i++) {
+      evolution += evolved[i];
+      if (i === evolved.length - 2) {
+        evolution += ' and ';
+      } else if (i !== evolved.length - 1) {
+        evolution += ", ";
+      }
+    }
+  } else {
+    evolution = evolved[0];
   }
+
+  result += " " + evolution + "!";
+
+  return result;
 }
 
 var charmander = {
@@ -102,7 +127,7 @@ var mewtwo = {
   level: 50
 }
 
-// console.log(train(mewtwo, 50))
+console.log(train(mewtwo, 50))
 // Congratulations, your Mewtwo grew to LV. 100!
 
 var zubat = {
