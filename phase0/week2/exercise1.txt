@@ -1,0 +1,94 @@
+-----------------------------------
+1. Newton Second Law
+-----------------------------------
+    ## Algoritma ##
+
+    1. Memasukkan massa benda dengan 600 kg
+    2. Memasukkan percepatan dengan 2 m/s2
+    3. Mendapatkan nilai resultan gaya dengan mengalikan massa benda dengan percepatan
+    4. Menampilkan hasil resultan gaya
+
+    ## pseudocode ##
+
+    STORE 'mass' with 600
+    STORE 'acceleration' with 2
+    CALCULATE 'mass' times 'acceleration'
+    SET 'force' value with calculation result
+    DISPLAY 'force'
+
+-----------------------------------
+2. Tahun Kabisat
+-----------------------------------
+    ## Algoritma ##
+
+    1. Memasukkan tahun yang akan dicek
+    2. Jika tahun habis dibagi 4 dan tidak habis dibagi 100 
+        atau jika tahun habis di bagi 4, habis di bagi 100 dan habis di bagi 400
+        maka ke step 3 jika tidak ke step 4
+    3. Tahun tersebut adalah tahun Kabisat
+    4. Tahun tersebut bukan tahun Kabisat
+
+    ## pseudocode ##
+
+    STORE 'year' with any value
+    CALCULATE 'year' mod 4
+    SET 'remainderModBy4' with calculation result
+    CALCULATE 'year' mod 100
+    SET 'remainderModBy100' with calculation result
+    CALCULATE 'year; mod 400
+    SET 'remainderModby400' with calculation result
+
+    IF 'remainderModBy4' equal to 0 AND 'remainderModBy100' not equal to 0 THEN
+        DISPLAY 'Leap Year'
+    ELSEIF 'remainderModBy4' equal to 0 AND 'remainderModBy100' equal to 0 AND 'remainderModby400' equal to 0 THEN
+        DISPLAY 'Leap Year'
+    ELSE
+        DISPLAY 'Not Leap Year'
+    END IF
+
+
+-----------------------------------
+3. Laundry Day
+-----------------------------------
+    ## Algoritma ##
+
+    1. Tentukan jumlah pakaian yang akan dicuci yaitu 20
+    2. Masukkan satu pakaian ke mesin cuci
+    3. Jika pakaian yang masuk ke mesin cuci sudah mencapai 20 maka lanjut ke step 4 jika tidak balik ke step 2
+    4. Nyalakan mesin cuci
+
+    ## pseudocode ##
+    STORE 'clothes' with 0
+
+    WHILE 'clothes' < 20
+        ADD 'clothes' by 1
+    END WHILE
+
+    DISPLAY 'Start the machine'
+
+-----------------------------------
+4. Periksa Kuku
+-----------------------------------
+    ## Algoritma ##
+
+    1. Menentukan nilai 'student' yaitu 0
+    2. Ulangi step 3 selama 'student' masih di bawah 40. Jika 'student' sudah 40, lanjut ke step 8.
+    3. Tambahkan 'student' dengan 1
+    4. Menentukan nilai 'long nail' dengan true atau false
+    5. Jika 'long nail' bernilai true maka lanjut ke step 6 jika tidak ke step 7.
+    6. Tampilkan 'punish the student'
+    7. Tampilkan 'praise the student' 
+    8. Selesai
+
+    ## pseudocode ##
+    STORE 'student' with 0
+
+    WHILE 'student' < 40 
+        ADD 'student' by 1
+        SET 'long nail' with true or false
+        IF 'long nail' equal to true THEN
+            DISPLAY 'punish the student'
+        ELSE
+            DISPLAY 'praise the student'
+        END IF
+    END WHILE
