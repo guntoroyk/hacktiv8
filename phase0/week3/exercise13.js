@@ -1,7 +1,7 @@
 function targetTerdekat(arr) {
     // you can only write your code here!
     var xIndex = [];
-    var oIndex = 0;
+    var oIndex = null;
     var terkecil = 0;
     var selisih = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -12,6 +12,8 @@ function targetTerdekat(arr) {
             oIndex = i;
         }
     }
+
+    if (oIndex === null) return 0 // jika tidak ada o maka return 0
 
     for (let j = 0; j < xIndex.length; j++) {
         if (j === 0) {
@@ -28,7 +30,7 @@ function targetTerdekat(arr) {
 }
   
   // TEST CASES
-  console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3
+  console.log(targetTerdekat([' ', ' ', '', ' ', ' ', 'x', ' ', 'x'])); // 3
   console.log(targetTerdekat(['o', ' ', ' ', ' ', 'x', 'x', 'x'])); // 4
   console.log(targetTerdekat(['x', ' ', ' ', ' ', 'x', 'x', 'o', ' '])); // 1
   console.log(targetTerdekat([' ', ' ', 'o', ' '])); // 0
